@@ -1,0 +1,30 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-size: cover !important;
+}
+
+div#container {
+  text-align: center;
+  padding: 4em;
+}
+
+div#container h1 {
+  color: white;
+  font-size: 600%;
+  text-shadow:
+    -3px -3px 0 #000,
+    3px -3px 0 #000,
+    -3px 3px 0 #000,
+    3px 3px 0 #000;
+}
+
+img#footer {
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+}
