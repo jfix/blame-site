@@ -3,6 +3,11 @@ const express = require('express')
 const giphy = require('giphy-api')()
 const path = require('path')
 
+const phrases = [
+  'Consider yourself blamed!!!',
+  'You\'ve been blamed right now!!!'
+]
+
 const app = express()
 app.set('view engine', 'pug')
 app.use(express.static(path.join(__dirname, 'assets')))
@@ -12,7 +17,7 @@ app.get('/', (req, res) => {
   .then((gif) => {
     res.render('index', {
       title: 'You\'re blamed!',
-      message: 'Hello there!',
+      message: phrases[Math.floor(Math.random() * phrases.length)],
       image: gif.data.image_url })
   })
   .catch((err) => {
