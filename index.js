@@ -4,6 +4,7 @@ const giphy = require('giphy-api')()
 const path = require('path')
 
 const phrases = [
+  'Blame on you!!!',
   'Consider yourself blamed!!!',
   'You\'ve been blamed right now!!!'
 ]
@@ -16,7 +17,7 @@ app.get('/', (req, res) => {
   giphy.random('rage')
   .then((gif) => {
     res.render('index', {
-      title: 'You\'re blamed!',
+      title: 'Blam-blam-blame!',
       message: phrases[Math.floor(Math.random() * phrases.length)],
       image: gif.data.image_url })
   })
