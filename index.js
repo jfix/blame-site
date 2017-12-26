@@ -8,13 +8,16 @@ const phrases = [
   'Consider yourself blamed!!!',
   'You\'ve been blamed right now!!!'
 ]
+const keywords = [
+  'rage', 'leave', 'get-out', 'stop-it'
+]
 
 const app = express()
 app.set('view engine', 'pug')
 app.use(express.static(path.join(__dirname, 'assets')))
 
 app.get('/', (req, res) => {
-  giphy.random('rage')
+  giphy.random(keywords[Math.floor(Math.random() * keywords.length)])
   .then((gif) => {
     res.render('index', {
       title: 'Blam-blam-blame!',
